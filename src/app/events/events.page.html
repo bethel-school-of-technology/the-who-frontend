@@ -4,60 +4,29 @@
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content>
-  <ion-card>
-      <!-- <ion-thumbnail slot="start">
-        <img  width="90" height="90" src="http://lorempixel.com/64/64/">
-      </ion-thumbnail> -->
-      <ion-card-header>
-        <ion-card-title>Worship Conference</ion-card-title>
-        <ion-card-subtitle>June 5-7, 2019 </ion-card-subtitle>
-      </ion-card-header>
-
-      <ion-card-content>
-        Event description goes here!
-      </ion-card-content>
+  <ion-list *ngFor="let event of events">
+     
+      <ion-item >
+        <ion-card>
+          
+          <!-- <ion-thumbnail slot="start"> -->
+            <img class="eventImage" height="64"  src={{event.image}}>
+          <!-- </ion-thumbnail> -->
+        
+       
+          <ion-card-header>
+            <ion-card-title>{{event.name}}</ion-card-title>
+            <ion-card-subtitle>{{event.date}}, {{event.time}} Location: {{event.location}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            {{event.details}}
+          </ion-card-content>
+        
+        </ion-card>
+      </ion-item>
     
-  </ion-card>
-  <ion-card>
-      <ion-thumbnail slot="start">
-        <img  width="90" height="90" src="http://lorempixel.com/64/64/">
-      </ion-thumbnail>
-      <ion-card-header>
-        <ion-card-title>Baseball in the Park</ion-card-title>
-        <ion-card-subtitle>Saturday, June 15, 12-6 pm</ion-card-subtitle>
-      </ion-card-header>
-
-      <ion-card-content>
-       Lots of baseball and good food!
-      </ion-card-content>
-    
-  </ion-card>
-  <ion-card>
-      <ion-thumbnail slot="start">
-        <img  width="90" height="90" src="http://lorempixel.com/64/64/">
-      </ion-thumbnail>
-      <ion-card-header>
-        <ion-card-title>Event2</ion-card-title>
-        <ion-card-subtitle>Date and Time</ion-card-subtitle>
-      </ion-card-header>
-
-      <ion-card-content>
-        Event description goes here!
-      </ion-card-content>
-    
-  </ion-card>
-  <ion-card>
-      <ion-thumbnail slot="start">
-        <img  width="90" height="90" src="http://lorempixel.com/64/64/">
-      </ion-thumbnail>
-      <ion-card-header>
-        <ion-card-title>Event2</ion-card-title>
-        <ion-card-subtitle>Date and Time</ion-card-subtitle>
-      </ion-card-header>
-
-      <ion-card-content>
-        Event description goes here!
-      </ion-card-content>
-    
-  </ion-card>
+  </ion-list>
+  
