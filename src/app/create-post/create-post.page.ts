@@ -1,6 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 
 import { Post } from '../post.model';
+
+
 
 @Component({
   selector: 'app-create-post',
@@ -8,6 +11,13 @@ import { Post } from '../post.model';
   styleUrls: ['./create-post.page.scss'],
 })
 export class CreatePostPage implements OnInit {
+  post: any = {
+    post_id: Number,
+    user_id: Number,
+    title: '',
+    body: '',
+    create_date: Date
+  };
 
   constructor() { }
 

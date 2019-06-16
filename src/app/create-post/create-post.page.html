@@ -4,7 +4,30 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content padding>
+  <ion-list>
+   
+    <ion-item>
+      <ion-label floating>Title:</ion-label>
+      <ion-input  placeholder="Enter Title" type="text"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>Content:</ion-label>
+      <ion-textarea  placeholder="Write New Blog"type="text"></ion-textarea>
+    </ion-item>
+
+  </ion-list> 
+
+  
+  <ion-button expand="block" (click)="save()" color="primary" >Save</ion-button>
+
+  </ion-content>
+
+<!-- <ion-content >
+
+
+  
   <ion-list>
    <ion-card padding>
     <ion-item>
@@ -32,9 +55,10 @@
       
     </ion-item>
   </ion-card>
+
   </ion-list> 
 
   
   <ion-button expand="block" (click)="save()" color="primary" >Save</ion-button>
 
-  </ion-content>
+  </ion-content> -->
