@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Posts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let post of posts">
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{post.title}}</ion-card-title>
+          <ion-card-subtitle>{{post.userName}}, {{post.createDate}}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>{{post.body}}</ion-card-content>
+      
+        <ion-footer class="cardfooter">
+          <ion-item>
+            <a href="#">Comments</a>
+            </ion-item>
+        </ion-footer>
+      </ion-card>
+
+     
+    </ion-item>
+  </ion-list>
+  
+
+</ion-content>
+<ion-footer>
+<ion-button expand="block" href="./create-post"  >Create a post!</ion-button>
+</ion-footer>
