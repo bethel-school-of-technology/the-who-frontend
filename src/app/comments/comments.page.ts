@@ -2,6 +2,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 // import { selectedPost } from '../posts/posts.page';
 import { Post } from '../posts/posts.page';
+import { ActivatedRoute } from '@angular/router';
+
+
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.page.html',
@@ -10,9 +13,8 @@ import { Post } from '../posts/posts.page';
 export class CommentsPage implements OnInit {
 @Input() post: Post;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
- 
   ngOnInit() {
   }
 

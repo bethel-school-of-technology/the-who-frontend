@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<!-- <ion-content padding>
   <ion-list>
    
     <ion-item>
@@ -22,43 +22,26 @@
   
   <ion-button expand="block" (click)="save()" color="primary" >Save</ion-button>
 
-  </ion-content>
-
-<!-- <ion-content >
-
-
-  
-  <ion-list>
-   <ion-card padding>
-    <ion-item>
-      <ion-label floating>Title:</ion-label>
-      <ion-input  
-        type="text"
-         placeholder="Enter Title" 
-         name="title"
-         ngModel 
-         required
-         #title="ngModel"
-       ></ion-input> 
-       
-    </ion-item>
-    
-    <ion-item>
-      <ion-label floating>Content:</ion-label>
-      <ion-textarea 
-      placeholder="Write New Blog"
-      type="text"rows="4"
-      name="content"
-      ngModel 
-      required 
-      #content="ngModel"></ion-textarea>
-      
-    </ion-item>
-  </ion-card>
-
-  </ion-list> 
-
-  
-  <ion-button expand="block" (click)="save()" color="primary" >Save</ion-button>
-
   </ion-content> -->
+
+<ion-content >
+  <ion-card>
+      <ion-item>
+         <ion-input type="text" placeholder="Post Title Here" floating></ion-input>
+      </ion-item>   
+      <ion-item>
+          <ion-textarea type="text" rows="5" placeholder="Post Content Here" floating></ion-textarea>
+         
+      </ion-item>
+  </ion-card> 
+
+  <ion-footer>
+    <ion-button expand="block" href="./posts"  >Save</ion-button>
+    </ion-footer>
+
+  <!-- <ion-item>
+     <button color="accent" type="submit">Save Post</button>
+  </ion-item> -->
+</ion-content>
+    
+    
