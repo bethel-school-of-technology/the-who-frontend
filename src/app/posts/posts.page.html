@@ -5,11 +5,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let post of posts">
-    <ion-item>
-      <ion-card>
+  <ion-list class="posts">
+    <ion-item *ngFor="let post of posts">
+      <!-- <ion-card 
+    [class.selected]="post === selectedPost"
+    (click)="onSelect(post)"> -->
+    <ion-card [routerLink]="'/comments/' + post.postId">
         <ion-card-header>
-          <ion-card-title>{{post.title}}</ion-card-title>
+          <ion-card-title>{{post.postId}}: {{post.title}}</ion-card-title>
           <ion-card-subtitle>{{post.userName}}, {{post.createDate}}</ion-card-subtitle>
         </ion-card-header>
 
@@ -17,14 +20,24 @@
       
         <ion-footer class="cardfooter">
           <ion-item>
-            <a href="#">Comments</a>
+              <!-- <ion-button (click)="onSelect()">Comments</ion-button> -->
+              <ion-card-subtitle>Comments</ion-card-subtitle>
             </ion-item>
         </ion-footer>
       </ion-card>
-
-     
     </ion-item>
   </ion-list>
+
+ <!-- <div *ngIf="selectedPost">
+    <ion-card-header>
+        <ion-card-title>{{selectedPost.postId}}: {{selectedPost.title}}</ion-card-title>
+        <ion-card-subtitle>{{selectedPost.userName}}, {{selectedPost.createDate}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>{{selectedPost.body}}</ion-card-content>
+    
+
+ </div> -->
   
 
 </ion-content>

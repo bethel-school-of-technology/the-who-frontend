@@ -1,4 +1,8 @@
+import { CommentsPage } from './../comments/comments.page';
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+
+
 
 export class Post {
   postId: number;
@@ -46,9 +50,14 @@ const POSTS: Post [] = [
 })
 export class PostsPage implements OnInit {
 
-  constructor() { }
+  constructor(public navCtrl: NavController) { }
 
   posts = POSTS;
+  selectedPost: Post;
+
+  onSelect(post: Post): void {
+  this.selectedPost = post;
+  }
 
   ngOnInit() {
   }
