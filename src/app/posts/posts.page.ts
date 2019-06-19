@@ -1,4 +1,11 @@
+import { NavController } from '@ionic/angular';
+
+
+import { CommentsPage } from './../comments/comments.page';
 import { Component, OnInit } from '@angular/core';
+
+
+
 
 export class Post {
   postId: number;
@@ -24,8 +31,8 @@ const POSTS: Post [] = [
     userId: 2445,
     userName: 'Bartimaeus',
     title: 'where is God when it hurts',
-    // tslint:disable-next-line:max-line-length
-    body: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+   // tslint:disable-next-line:max-line-length
+   body: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     createDate: 'June 7, 2020'
   },
   {
@@ -36,7 +43,7 @@ const POSTS: Post [] = [
     // tslint:disable-next-line:max-line-length
     body: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     createDate: 'June 7, 2020'
-  },
+  }
 ];
 
 @Component({
@@ -46,11 +53,11 @@ const POSTS: Post [] = [
 })
 export class PostsPage implements OnInit {
 
-  constructor() { }
+  constructor(public navCtrl: NavController) { }
 
-  posts = POSTS;
-
+posts = POSTS;
   ngOnInit() {
-  }
+    }
+   }
 
-}
+
