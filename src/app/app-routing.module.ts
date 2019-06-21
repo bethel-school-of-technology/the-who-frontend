@@ -10,6 +10,19 @@ const routes: Routes = [
   { path: 'giving', loadChildren: './giving/giving.module#GivingPageModule' },
   { path: 'media', loadChildren: './media/media.module#MediaPageModule' },
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
+ 
+  { path: 'comments', loadChildren: './comments/comments.module#CommentsPageModule' },
+  { path: 'comments/:id', loadChildren: './comments/comments.module#CommentsPageModule', },  { path: 'create-comment', loadChildren: './create-comment/create-comment.module#CreateCommentPageModule' }
+
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
 
 
 ];
