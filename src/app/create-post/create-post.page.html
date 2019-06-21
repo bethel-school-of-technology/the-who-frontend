@@ -4,61 +4,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
-   
-    <ion-item>
-      <ion-label floating>Title:</ion-label>
-      <ion-input  placeholder="Enter Title" type="text"></ion-input>
-    </ion-item>
+
+<ion-content >
+  <ion-card>
+      <ion-item>
+         <ion-input type="text" placeholder="Post Title Here" floating></ion-input>
+      </ion-item>   
+      <ion-item>
+          <ion-textarea type="text" rows="5" placeholder="Post Content Here" floating></ion-textarea>
+         
+      </ion-item>
+  </ion-card> 
+
+  <ion-footer>
+    <ion-button expand="block" href="./posts"  >Save</ion-button>
+    </ion-footer>
+
+ 
+</ion-content>
     
-    <ion-item>
-      <ion-label floating>Content:</ion-label>
-      <ion-textarea  placeholder="Write New Blog"type="text"></ion-textarea>
-    </ion-item>
-
-  </ion-list> 
-
-  
-  <ion-button expand="block" (click)="save()" color="primary" >Save</ion-button>
-
-  </ion-content>
-
-<!-- <ion-content >
-
-
-  
-  <ion-list>
-   <ion-card padding>
-    <ion-item>
-      <ion-label floating>Title:</ion-label>
-      <ion-input  
-        type="text"
-         placeholder="Enter Title" 
-         name="title"
-         ngModel 
-         required
-         #title="ngModel"
-       ></ion-input> 
-       
-    </ion-item>
     
-    <ion-item>
-      <ion-label floating>Content:</ion-label>
-      <ion-textarea 
-      placeholder="Write New Blog"
-      type="text"rows="4"
-      name="content"
-      ngModel 
-      required 
-      #content="ngModel"></ion-textarea>
-      
-    </ion-item>
-  </ion-card>
-
-  </ion-list> 
-
-  
-  <ion-button expand="block" (click)="save()" color="primary" >Save</ion-button>
-
-  </ion-content> -->

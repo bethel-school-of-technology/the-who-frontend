@@ -5,29 +5,65 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let post of posts">
-    <ion-item>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>{{post.title}}</ion-card-title>
+  <ion-list  class="posts">
+    <ion-item *ngFor="let post of posts">
+    <ion-card >
+      <ion-card-header>
+          <ion-card-title> {{post.title}}</ion-card-title>
           <ion-card-subtitle>{{post.userName}}, {{post.createDate}}</ion-card-subtitle>
         </ion-card-header>
 
         <ion-card-content>{{post.body}}</ion-card-content>
       
         <ion-footer class="cardfooter">
-          <ion-item>
-            <a href="#">Comments</a>
-            </ion-item>
+          
+              <!-- <ion-button (click)="onSelect()">Comments</ion-button> -->
+              <!-- <ion-card-subtitle>Comments</ion-card-subtitle> -->
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-start clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>12 Likes</div>
+                  </button>
+                </ion-col>
+                <ion-col>
+                  <button [routerLink]="'/comments/' + post.postId" ion-button icon-start clear small>
+                    <ion-icon name="text"></ion-icon>
+                    <div>4 Comments</div>
+                  </button>
+                </ion-col>
+              </ion-row>
+           
+              <ion-row>
+                <ion-col align-self-center text-center>
+                  <ion-note>
+                    ???
+                  </ion-note>
+                </ion-col>
+               </ion-row>
+              
+              
+           
         </ion-footer>
       </ion-card>
-
-     
     </ion-item>
   </ion-list>
+</ion-content>
+
+<!-- <div *ngIf="selectedPost">
+    <ion-card-header>
+        <ion-card-title>{{selectedPost.postId}}: {{selectedPost.title}}</ion-card-title>
+        <ion-card-subtitle>{{selectedPost.userName}}, {{selectedPost.createDate}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>{{selectedPost.body}}</ion-card-content> 
+    
+
+ </div>  -->
   
 
-</ion-content>
+
+ 
 <ion-footer>
 <ion-button expand="block" href="./create-post"  >Create a post!</ion-button>
 </ion-footer>

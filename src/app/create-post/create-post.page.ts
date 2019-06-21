@@ -1,7 +1,10 @@
 
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Output } from '@angular/core';
+import {NgForm } from '@angular/forms';
 import { Post } from '../post.model';
+// import { PostsService } from '../posts.service';
+import { EventEmitter } from 'protractor';
+import { ValueAccessor } from '@ionic/angular/dist/directives/control-value-accessors/value-accessor';
 
 
 
@@ -19,7 +22,10 @@ export class CreatePostPage implements OnInit {
     create_date: Date
   };
 
-  constructor() { }
+
+  constructor() {}
+
+
 
   ngOnInit() {
   }
