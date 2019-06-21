@@ -1,3 +1,7 @@
+
+import { FormsModule } from '@angular/forms';
+
+import { CommentsPage } from './comments/comments.page';
 import { CreatePostPage } from './create-post/create-post.page';
 import { HomePage } from './home/home.page';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -12,6 +16,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { EventsPage } from './events/events.page';
 
+// import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +26,7 @@ import { EventsPage } from './events/events.page';
   entryComponents: [
     AppComponent,
      ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [
     StatusBar,
     SplashScreen,
