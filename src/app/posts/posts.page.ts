@@ -56,6 +56,7 @@ export class PostsPage implements OnInit {
   constructor(public navCtrl: NavController) { }
 
 posts = POSTS;
+// selectedPost: Post;
   ngOnInit() {
     }
    }
