@@ -9,9 +9,13 @@ const routes: Routes = [
   { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
   { path: 'create-post', loadChildren: './create-post/create-post.module#CreatePostPageModule' },
   { path: 'posts', loadChildren: './posts/posts.module#PostsPageModule' },
-  { path: 'comments', loadChildren: './comments/comments.module#CommentsPageModule' },
-  { path: 'comments/:id', loadChildren: './comments/comments.module#CommentsPageModule', },  { path: 'create-comment', loadChildren: './create-comment/create-comment.module#CreateCommentPageModule' }
-
+  { path: 'giving', loadChildren: './giving/giving.module#GivingPageModule' },
+  { path: 'media', loadChildren: './media/media.module#MediaPageModule' },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
+   { path: 'comments', loadChildren: './comments/comments.module#CommentsPageModule' },
+  { path: 'comments/:id', loadChildren: './comments/comments.module#CommentsPageModule', },
+  { path: 'create-comment', loadChildren: './create-comment/create-comment.module#CreateCommentPageModule' }
+ 
 ];
 
 @NgModule({
