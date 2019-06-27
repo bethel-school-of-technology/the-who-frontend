@@ -5,21 +5,19 @@
 </ion-header>
 
 
-<ion-content >
-  <ion-card>
-      <ion-item>
-         <ion-input type="text" placeholder="Post Title Here" floating></ion-input>
-      </ion-item>   
-      <ion-item>
-          <ion-textarea type="text" rows="5" placeholder="Post Content Here" floating></ion-textarea>
-         
+<ion-content padding>
+  <form [formGroup]="postForm">
+    <ion-item>
+      <ion-label position="floating">Blog Title</ion-label>
+      <ion-input type="text" formControlName="post_title"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Blog Content</ion-label>
+        <ion-textarea rows="6" formControlName="post_body"></ion-textarea>
       </ion-item>
-  </ion-card> 
-
-  <ion-footer>
-    <ion-button expand="block" href="./posts"  >Save</ion-button>
-    </ion-footer>
-
+    
+    <ion-button expand="block" [disabled]="!postForm.valid" (click)="savePost()">Submit</ion-button>
+  </form>
  
 </ion-content>
     

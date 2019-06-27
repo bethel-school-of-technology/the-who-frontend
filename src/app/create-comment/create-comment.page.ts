@@ -1,48 +1,18 @@
-import { NavController } from '@ionic/angular';
-
-
-import { CommentsPage } from './../comments/comments.page';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RestApiService } from './../rest-api.service';
+import { NavController, LoadingController } from '@ionic/angular';
+import {
+  FormControl,
+  FormGroupDirective,
+  FormBuilder,
+  FormGroup,
+  NgForm,
+  Validators,
+  FormArray} from '@angular/forms';
 
 
 
-
-export class Comment {
-commentId: number;
- body: string;
-//  create_date;
- postId: number;
- userId: number;
- userName: string;
-}
-
-const COMMENTS: Comment [] = [
-  {
-      postId: 1,
-      commentId: 1,
-      userId: 54,
-      userName: 'Capt',
-      body: 'Haha! Tony you\'re crazy!'
-
-
-  },
-  {
-    postId: 1,
-    commentId: 2,
-    userId: 27,
-    userName: 'Tony',
-    body: 'Iron Man is definitely a better man'
-
-  },
-  {
-    postId: 1,
-    commentId: 3,
-    userId: 25,
-    userName: 'Peter',
-    body: 'I appreciate you guys so much'
-
-  }
-];
 
 @Component({
     selector: 'app-create-comment',
@@ -51,10 +21,80 @@ const COMMENTS: Comment [] = [
   })
 export class CreateCommentPage  implements OnInit {
 
-  constructor(public navCtrl: NavController) { }
+  postForm: FormGroup;
+  comments: FormArray;
 
-comments = COMMENTS;
+  constructor(
+    public navCtrl: NavController,
+    public api: RestApiService,
+    public loadingController: LoadingController,
+    private route: ActivatedRoute,
+    public router: Router,
+    private formBuilder: FormBuilder
+    ) {
+      this.getPost(this.route.snapshot.paramMap.get('id'));
+      this.postForm = this.formBuilder.group({
+        post_body: [null, Validators.required],
+        comments : this.formBuilder.array([])
+      });
+     }
+
+
   ngOnInit() {
+    }
+
+    get commentData() {
+      return  this.postForm.get('comments') as FormArray;
+    }
+
+    async getPost(id) {
+      const loading = await this.loadingController.create({
+        message: 'Loading'
+      });
+      await loading.present();
+      await this.api.getPostById(id).subscribe(res => {
+        this.postForm.controls.post_title.setValue(res.post_title);
+        const controlArray =  this.postForm.controls.comments as FormArray;
+        res.comments.forEach(comment => {
+          controlArray.push(this.formBuilder.group({
+            comment_body: ''
+          }));
+        });
+        for (let i = 0; i < res.comments.length; i++) {
+          controlArray.controls[i].get('comment_body').setValue(res.comments[i].comment_body);
+        }
+        console.log(this.postForm);
+        loading.dismiss();
+      }, err => {
+        console.log(err);
+        loading.dismiss();
+      });
+    }
+
+    createComment(): FormGroup {
+      return this.formBuilder.group({
+        comment_body: ''
+      });
+    }
+
+    addBlankComment(): void {
+      this.comments = this.postForm.get('comments') as FormArray;
+      this.comments.push(this.createComment());
+    }
+
+    deleteComment(control, index) {
+      control.removeAt(index);
+    }
+
+    async updatePost() {
+      await this.api.updatePost(this.route.snapshot.paramMap.get('id'),
+      this.postForm.value)
+        .subscribe(res => {
+          const id = res.id;
+          this.router.navigate(['/comments/' + id]);
+        }, (err) => {
+          console.log(err);
+        });
     }
    }
 
