@@ -63,7 +63,7 @@ comments: any = {};
   }
 
   edit(id) {
-    this.router.navigate(['/create-comment', JSON.stringify(id)]);
+    this.router.navigate(['{{post_id}/comments/create-comment', JSON.stringify(id)]);
   }
 
 }

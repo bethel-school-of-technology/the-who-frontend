@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 
 
 
-
 @Component({
   selector: 'app-list',
   templateUrl: './list.page.html',
@@ -46,7 +45,7 @@ export class ListPage implements OnInit {
     }
 
     showComments(id) {
-      this.router.navigate(['post:id/comments', JSON.stringify(id)]);
+      this.router.navigate(['post_id/comments', JSON.stringify(id)]);
     }
    }
 

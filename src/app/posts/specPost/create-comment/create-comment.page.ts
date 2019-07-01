@@ -55,7 +55,7 @@ export class CreateCommentPage  implements OnInit {
       await this.api.getPostById(id).subscribe(res => {
         this.postForm.controls.post_title.setValue(res.post_title);
         const controlArray =  this.postForm.controls.comments as FormArray;
-        res.comments.forEach(comment => {
+        res.comments.forEach(() => {
           controlArray.push(this.formBuilder.group({
             comment_body: ''
           }));
@@ -91,7 +91,7 @@ export class CreateCommentPage  implements OnInit {
       this.postForm.value)
         .subscribe(res => {
           const id = res.id;
-          this.router.navigate(['/comments/' + id]);
+          this.router.navigate(['{post_id}/comments']);
         }, (err) => {
           console.log(err);
         });

@@ -9,9 +9,9 @@ const routes: Routes = [
   { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
   { path: 'list', loadChildren: './posts/list/list.module#ListPageModule'},
   { path: 'create-post', loadChildren: './posts/create-post/create-post.module#CreatePostPageModule' },
-  { path: 'post:id/comments', loadChildren: './posts/specPost/comments/comments.module#CommentsPageModule' },
+  { path: '{post_id}/comments', loadChildren: './posts/specPost/comments/comments.module#CommentsPageModule' },
   // tslint:disable-next-line:max-line-length
-  { path: 'post:id/comments/create-comment', loadChildren: './posts/specPost/create-comment/create-comment.module#CreateCommentPageModule'}
+  { path: '{post_id}/comments/create-comment', loadChildren: './posts/specPost/create-comment/create-comment.module#CreateCommentPageModule'}
 
 ];
 
