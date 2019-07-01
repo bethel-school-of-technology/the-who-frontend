@@ -23,6 +23,7 @@ comments: FormArray;
               public router: Router,
               private formBuilder: FormBuilder) {
                 this.postForm = this.formBuilder.group({
+                  post_title : '',
                   post_body : [null, Validators.required],
                   comments : this.formBuilder.array([])
                 });
@@ -56,7 +57,7 @@ comments: FormArray;
     await this.api.postPost(this.postForm.value)
     .subscribe(res => {
       const id = res.id;
-      this.router.navigate(['/posts']);
+      this.router.navigate(['/list']);
     }, (err) => {
       console.log(err);
     });

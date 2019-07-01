@@ -46,7 +46,7 @@ export class ListPage implements OnInit {
     }
 
     showComments(id) {
-      this.router.navigate(['/comments', JSON.stringify(id)]);
+      this.router.navigate(['post:id/comments', JSON.stringify(id)]);
     }
    }
 
