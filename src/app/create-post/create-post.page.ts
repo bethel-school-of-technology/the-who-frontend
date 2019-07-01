@@ -33,24 +33,24 @@ comments: FormArray;
   ngOnInit() {
   }
 
-  get commentData() {
-    return this.postForm.get('comments') as FormArray;
-  }
+  // get commentData() {
+  //   return this.postForm.get('comments') as FormArray;
+  // }
 
-  createComment(): FormGroup {
-    return this.formBuilder.group({
-      comment_body: ''
-    });
-  }
+  // createComment(): FormGroup {
+  //   return this.formBuilder.group({
+  //     comment_body: ''
+  //   });
+  // }
 
-  addBlankComment(): void {
-    this.comments = this.postForm.get('comments') as FormArray;
-    this.comments.push(this.createComment());
-  }
+  // addBlankComment(): void {
+  //   this.comments = this.postForm.get('comments') as FormArray;
+  //   this.comments.push(this.createComment());
+  // }
 
-  deleteComment(control, index) {
-    control.removeAt(index);
-  }
+  // deleteComment(control, index) {
+  //   control.removeAt(index);
+  // }
 
   async savePost() {
     await this.api.postPost(this.postForm.value)

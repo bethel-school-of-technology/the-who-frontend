@@ -47,20 +47,20 @@ comments: any = {};
     });
   }
 
-  // async delete(id) {
-  //   const loading = await this.loadingController.create({
-  //     message: 'Deleting'
-  //   });
-  //   await loading.present();
-  //   await this.api.deletePost(id)
-  //   .subscribe(res => {
-  //     loading.dismiss();
-  //     this.router.navigate(['/posts']);
-  //   }, err => {
-  //     console.log(err);
-  //     loading.dismiss();
-  //   });
-  // }
+  async delete(id) {
+    const loading = await this.loadingController.create({
+      message: 'Deleting'
+    });
+    await loading.present();
+    await this.api.deletePost(id)
+    .subscribe(res => {
+      loading.dismiss();
+      this.router.navigate(['/posts']);
+    }, err => {
+      console.log(err);
+      loading.dismiss();
+    });
+  }
 
   edit(id) {
     this.router.navigate(['/create-comment', JSON.stringify(id)]);
