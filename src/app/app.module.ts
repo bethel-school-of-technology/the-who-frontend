@@ -1,8 +1,8 @@
 
 import { FormsModule } from '@angular/forms';
 
-import { CommentsPage } from './comments/comments.page';
-import { CreatePostPage } from './create-post/create-post.page';
+import { CommentsPage } from './posts/specPost/comments/comments.page';
+import { CreatePostPage } from './posts/create-post/create-post.page';
 import { HomePage } from './home/home.page';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';

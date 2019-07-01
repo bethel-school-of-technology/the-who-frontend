@@ -1,7 +1,7 @@
 import { NavController } from '@ionic/angular';
 
 
-import { CommentsPage } from './../comments/comments.page';
+import { CommentsPage } from '../comments/comments.page';
 import { Component, OnInit } from '@angular/core';
 
 
