@@ -1,4 +1,4 @@
-import { RestApiService } from './../rest-api.service';
+import { RestApiService } from '../../../rest-api.service';
 import { LoadingController } from '@ionic/angular';
 
 import { Component, OnInit } from '@angular/core';

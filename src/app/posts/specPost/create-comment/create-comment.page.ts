@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RestApiService } from './../rest-api.service';
+import { RestApiService } from '../../../rest-api.service';
 import { NavController, LoadingController } from '@ionic/angular';
 import {
   FormControl,

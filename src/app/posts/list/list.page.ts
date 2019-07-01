@@ -1,6 +1,6 @@
 import { NavController, LoadingController } from '@ionic/angular';
 
-import { RestApiService } from '../rest-api.service';
+import { RestApiService } from '../../rest-api.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.page.html',
-  styleUrls: ['./posts.page.scss'],
+  selector: 'app-list',
+  templateUrl: './list.page.html',
+  styleUrls: ['./list.page.scss'],
 })
-export class PostsPage implements OnInit {
+export class ListPage implements OnInit {
 
   posts: any;
 
@@ -25,7 +25,7 @@ export class PostsPage implements OnInit {
 
 
   ngOnInit() {
-    console.log('Posts page');
+    console.log('list page');
     this.getPosts();
     }
 
