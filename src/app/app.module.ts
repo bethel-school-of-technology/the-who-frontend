@@ -18,21 +18,42 @@ import { EventsPage } from './events/events.page';
 
 // import { FormsModule } from '@angular/forms';
 
+export function tokenGetter() {
+  return localStorage.getItem('jwt_token');
+}
 
 @NgModule({
-  declarations: [
-    AppComponent,
-     ],
+  declarations: [AppComponent, HomePage, LoginPage, SignupPage],
   entryComponents: [
     AppComponent,
-     ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
+  ],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
+    CommonModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: environment.whitelistedDomains
+      }
+    }),
+    FormsModule,
+    IonicModule.forRoot(),
+    RouterModule.forRoot(routes, {useHash: true})],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    // { provide: ErrorHandler, useClass: IonicErrorHandler},
-     ],
+    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
+
+
+const routes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: HomePage, canActivate: [AuthGuard]},
+  {path: 'login', component: LoginPage},
+  {path: 'signup', component: SignupPage},
+  {path: '**', redirectTo: '/home'}
+];

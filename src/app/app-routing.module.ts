@@ -14,7 +14,9 @@ const routes: Routes = [
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
    { path: 'comments', loadChildren: './comments/comments.module#CommentsPageModule' },
   { path: 'comments/:id', loadChildren: './comments/comments.module#CommentsPageModule', },
-  { path: 'create-comment', loadChildren: './create-comment/create-comment.module#CreateCommentPageModule' }
+  { path: 'create-comment', loadChildren: './create-comment/create-comment.module#CreateCommentPageModule' },
+  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
  
 ];
 
