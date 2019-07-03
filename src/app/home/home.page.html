@@ -1,18 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      W|H|O 
-      
-    </ion-title>
+    <ion-title>W|H|O</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <div class="ion-padding">
-    Home Page
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
-  <div class="posts" >
-    <a href="./posts">Blog Posts</a>
-  </div>
-</ion-content>
+
+    <ion-content>
+
+      <button type="button" button class="button1" onclick="window.location.href='events';"> Events </button>
+      <br>
+      <p></p>
+      <button type="button" button class="button1" onclick="window.location.href='posts';"> Blog </button>
+      <br>
+      <p></p>
+      <button type="button" button class="button1" onclick="window.location.href='media';"> Media </button>
+      <br>
+      <p></p>
+      <button type="button" button class="button1" onclick="window.location.href='giving';"> Giving </button>
+      <br>
+      
+    </ion-content>

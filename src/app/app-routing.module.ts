@@ -10,8 +10,11 @@ const routes: Routes = [
   { path: 'create-post', loadChildren: './blog/create-post/create-post.module#CreatePostPageModule' },
   { path: '{post_id}/comments', loadChildren: './blog/specPost/comments/comments.module#CommentsPageModule' },
   // tslint:disable-next-line:max-line-length
-  { path: '{post_id}/comments/create-comment', loadChildren: './blog/specPost/create-comment/create-comment.module#CreateCommentPageModule' }
+  { path: '{post_id}/comments/create-comment', loadChildren: './blog/specPost/create-comment/create-comment.module#CreateCommentPageModule' },
 
+  { path: 'giving', loadChildren: './giving/giving.module#GivingPageModule' },
+  { path: 'media', loadChildren: './media/media.module#MediaPageModule' },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
 ];
 
 @NgModule({
