@@ -10,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
 
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.page.html',
-  styleUrls: ['./list.page.scss'],
+  selector: 'app-posts',
+  templateUrl: './posts.page.html',
+  styleUrls: ['./posts.page.scss'],
 })
-export class ListPage implements OnInit {
+export class PostsPage implements OnInit {
 
     posts: any;
   constructor(public navCtrl: NavController,
@@ -25,7 +25,7 @@ export class ListPage implements OnInit {
 
 
   ngOnInit() {
-    console.log('list page');
+    console.log('posts page');
     this.getPosts();
     }
 

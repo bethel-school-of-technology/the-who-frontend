@@ -54,7 +54,7 @@ export class CommentsPage implements OnInit {
     await this.api.deletePost(id)
     .subscribe(res => {
       loading.dismiss();
-      this.router.navigate(['/list']);
+      this.router.navigate(['/posts']);
     }, err => {
       console.log(err);
       loading.dismiss();

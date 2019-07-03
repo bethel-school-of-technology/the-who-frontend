@@ -48,7 +48,7 @@ export class CreatePostPage implements OnInit {
     await this.api.postPost(this.postForm.value)
     .subscribe(res => {
       const id = res.id;
-      this.router.navigate(['/list']);
+      this.router.navigate(['/posts']);
     }, (err) => {
       console.log(err);
     });

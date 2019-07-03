@@ -6,11 +6,11 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
-  { path: 'list', loadChildren: './posts/list/list.module#ListPageModule' },
-  { path: 'create-post', loadChildren: './posts/create-post/create-post.module#CreatePostPageModule' },
-  { path: '{post_id}/comments', loadChildren: './posts/specPost/comments/comments.module#CommentsPageModule' },
+  { path: 'posts', loadChildren: './blog/posts/posts.module#PostsPageModule' },
+  { path: 'create-post', loadChildren: './blog/create-post/create-post.module#CreatePostPageModule' },
+  { path: '{post_id}/comments', loadChildren: './blog/specPost/comments/comments.module#CommentsPageModule' },
   // tslint:disable-next-line:max-line-length
-  { path: '{post_id}/comments/create-comment', loadChildren: './posts/specPost/create-comment/create-comment.module#CreateCommentPageModule' }
+  { path: '{post_id}/comments/create-comment', loadChildren: './blog/specPost/create-comment/create-comment.module#CreateCommentPageModule' }
 
 ];
 
