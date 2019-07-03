@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Comments</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-card padding>
+      <ion-card-header>
+        <ion-card-title> {{ post.title }}</ion-card-title>
+        <ion-card-subtitle
+          >{{ post.userName }}, {{ post.createDate }}</ion-card-subtitle
+        >
+      </ion-card-header>
+      <ion-card-content>
+        {{ post.body }}
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-item>
+    <ion-button expand="block" (click)="edit(post.id)">Add Comment</ion-button>
+  </ion-item>
+  <ion-item padding>
+    <h4>Comments</h4>
+  </ion-item>
+
+  <ion-list class="comments">
+    <ion-item *ngFor="let comment of post.comments">
+      <ion-card>
+        <ion-card-content>
+          <ion-item>{{ comment.body }}</ion-item>
+
+          <ion-footer class="cardfooter">
+            <ion-card-subtitle>{{ comment.userName }}</ion-card-subtitle>
+            <ion-card-subtitle>{{ comment.createDate }}</ion-card-subtitle>
+          </ion-footer>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create a New Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <form formGroup="postForm">
+      <ion-item>
+        <ion-label position="floating">Blog Title</ion-label>
+        <ion-input type="text" formControlName="post_title"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Blog Content</ion-label>
+          <ion-textarea rows="6" formControlName="post_body"></ion-textarea>
+        </ion-item>
+      
+      <ion-button expand="block" [disabled]="!postForm.valid" (click)="savePost()">Submit</ion-button>
+    </form>
+   
+  </ion-content>
+
+
+      <!-- <ion-input type="hidden">{{user}}</ion-input>
+      <ion-input type="hidden">{{user_id}}</ion-input> -->
+ 
+
+  
+    
