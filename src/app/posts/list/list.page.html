@@ -11,33 +11,21 @@
       <ion-card-header>
           <ion-card-title> {{post.title}}</ion-card-title>
           <ion-card-subtitle>{{post.userName}}, {{post.createDate}}</ion-card-subtitle>
-        </ion-card-header>
-
-        <ion-card-content>{{post.body}}</ion-card-content>
+      </ion-card-header>
+      <ion-card-content>
+        {{post.body}}
+      </ion-card-content>
       
-        <ion-footer class="cardfooter">
-          
-              <!-- <ion-button (click)="onSelect()">Comments</ion-button> -->
-              <!-- <ion-card-subtitle>Comments</ion-card-subtitle> -->
-            <ion-row>
-              
-              <ion-button expand="block" href="/{post_id}/comments"  >Comments</ion-button>
-              </ion-row>
-           
-              
-              
-              
-           
+      <ion-footer class="cardfooter">
+        <ion-row>
+            <ion-button expand="block" (click)="showComments(post.id)"  >Comments</ion-button>
+        </ion-row> 
         </ion-footer>
       </ion-card>
     </ion-item>
   </ion-list>
 </ion-content>
 
-
-
-
- 
 <ion-footer>
-<ion-button expand="block" href="/create-post"  >Create a post!</ion-button>
+<ion-button expand="block" href="/create-post"  >Write a post!</ion-button>
 </ion-footer>

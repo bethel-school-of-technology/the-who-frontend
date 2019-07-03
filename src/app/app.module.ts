@@ -1,12 +1,10 @@
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { CommentsPage } from './posts/specPost/comments/comments.page';
-import { CreatePostPage } from './posts/create-post/create-post.page';
-import { HomePage } from './home/home.page';
-import { NgModule, ErrorHandler } from '@angular/core';
+
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy, Data } from '@angular/router';
+import { RouteReuseStrategy, RouterModule, Routes, Data } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -14,9 +12,12 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { EventsPage } from './events/events.page';
 
-// import { FormsModule } from '@angular/forms';
+
+
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 @NgModule({
@@ -26,12 +27,18 @@ import { EventsPage } from './events/events.page';
   entryComponents: [
     AppComponent,
      ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    // { provide: ErrorHandler, useClass: IonicErrorHandler},
      ],
   bootstrap: [AppComponent]
 })
