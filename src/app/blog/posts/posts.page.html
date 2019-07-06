@@ -21,7 +21,9 @@
       
       <ion-footer class="cardfooter">
         <ion-row>
-            <ion-button expand="block" (click)="showComments(post.id)"  >Comments</ion-button>
+          <!-- need this button for backend -->
+            <!-- <ion-button expand="block" (click)="showComments(post.id)"  >Comments</ion-button> -->
+            <ion-button expand="block" href="/{post_id}/comments"  >Comments</ion-button>
         </ion-row> 
         </ion-footer>
       </ion-card>

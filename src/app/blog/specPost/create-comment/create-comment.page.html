@@ -9,28 +9,19 @@
 
 <ion-content padding>
     <form formGroup="postForm">
-      <ion-item>
-        <ion-label position="floating">Post Title</ion-label>
-        <ion-input type="text" formControlName="post_title"></ion-input>
-      </ion-item>
-      <ion-item-divider>
-        <ion-label>
-          Comments <ion-button shape="round" (click)="addBlankComment()"><ion-icon name="add-cirlce"></ion-icon></ion-button>
-        </ion-label>
-      </ion-item-divider>
-      <!-- Is this the comments page? where a blank comment comes up to fill? if so i want the post still at the top-->
-      <div formArrayName="comments">
-        <ion-item *ngFor="let comment of postForm.get['comments'].controls; let i=index" [formGroupName]="i">
-          <ion-label position="floating">Comment</ion-label>
-          <ion-row>
-            <ion-textarea rows="6" formControlName="comment_body"></ion-textarea>
-          </ion-row>
-          <ion-row>
-            <ion-button shape="round" color="dark" (click)="deleteComment(postForm.get['comments'].controls, i)"><ion-icon name="trash"></ion-icon></ion-button>
-          </ion-row>
-        </ion-item>
-      </div>
-      <ion-button expand="block" color="primary" [disabled]="!postForm.valid" (click)="updatePost()">Submit</ion-button>
+      
+      
+          <ion-item>
+              <ion-label position="floating">New Comment</ion-label>
+              <ion-textarea rows="10" formControlName="post_body"></ion-textarea>
+            </ion-item>
+        <!-- <ion-label position="floating">New Comment</ion-label>
+        <ion-input type="text" formControlName="post_title"></ion-input> -->
+        <!-- comment id in here someplace? -->
+      
     </form>
    </ion-content>
+  <ion-footer>
+        <ion-button expand="block" color="primary" [disabled]="!postForm.valid" (click)="updatePost()">Submit</ion-button>
     
+  </ion-footer>
