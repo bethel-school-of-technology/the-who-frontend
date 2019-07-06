@@ -6,7 +6,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = 'http://localhost:1337/localhost:3000/api/posts';
+const apiUrl = 'http://localhost:1337/api/posts';
 
 @Injectable({
   providedIn: 'root'
@@ -70,14 +70,4 @@ export class RestApiService {
       catchError(this.handleError)
     );
   }
-
-  postComments(post_id: string, data): Observable<any> { // data: holding the comment text. id: post_id
-    const url = `${apiUrl}/${post_id}/comments`;
-    return this.http.post(url, data, httpOptions).pipe(
-      catchError(this.handleError)
-    );
-  }
-  // POST: api/posts/{post_id}/comments -> create a comment for a post.
-  // PUT: api/posts/{post_id}/comments/{comment_id} -> update a comment.
-  // DELETE: api/posts/{post_id}/comments/{comment_id}
 }
