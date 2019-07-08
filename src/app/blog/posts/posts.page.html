@@ -21,9 +21,7 @@
       
       <ion-footer class="cardfooter">
         <ion-row>
-          <!-- need this button for backend -->
-            <!-- <ion-button expand="block" (click)="showComments(post.id)"  >Comments</ion-button> -->
-            <ion-button expand="block" href="/{post_id}/comments"  >Comments</ion-button>
+            <ion-button expand="block" (click)="showComments(post.id)"  >Comments</ion-button>
         </ion-row> 
         </ion-footer>
       </ion-card>
@@ -32,5 +30,5 @@
 </ion-content>
 
 <ion-footer>
-<ion-button expand="block" href="/create-post"  >Write a post!</ion-button>
+<ion-button expand="block" routerLink="/create-post"  >Write a post!</ion-button>
 </ion-footer>

@@ -84,9 +84,10 @@ export class CreateCommentPage implements OnInit {
     this.comments.push(this.createComment());
   }
 
-  deleteComment(control, index) {
-    control.removeAt(index);
-  }
+  // didn't put the delete comment in html
+  // deleteComment(control, index) {
+  //   control.removeAt(index);
+  // }
 
   async updatePost() {
     await this.api.updatePost(this.route.snapshot.paramMap.get('id'),

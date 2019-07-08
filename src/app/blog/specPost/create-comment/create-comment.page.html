@@ -7,21 +7,29 @@
   </ion-toolbar>
 </ion-header>
 
+<!--  -->
 <ion-content padding>
     <form formGroup="postForm">
-      
-      
-          <ion-item>
-              <ion-label position="floating">New Comment</ion-label>
-              <ion-textarea rows="10" formControlName="post_body"></ion-textarea>
-            </ion-item>
-        <!-- <ion-label position="floating">New Comment</ion-label>
-        <ion-input type="text" formControlName="post_title"></ion-input> -->
-        <!-- comment id in here someplace? -->
-      
-    </form>
-   </ion-content>
+      <ion-item> 
+        <!-- this is the post at the top of the page -->
+          
+          <ion-input rows="10" formControlName="post_body"></ion-input>
+      </ion-item>
+      <ion-item-divider>
+        <ion-label>
+          <ion-button expands="block" color="primary" (click)="addBlankComment()">Add Comment</ion-button>
+        </ion-label>
+      </ion-item-divider>
+      <ion-card>
+      <div formArrayName="comments">
+        <ion-item *ngFor="let comment of commentData.controls; let i=index" [formGroupName]="i">
+          <ion-label position="floating">Comment</ion-label>
+          <ion-textarea rows="6" formControlName="comment"></ion-textarea>
+        </ion-item>
+      </div>
+    </ion-card>
+   </form>
+  </ion-content>
   <ion-footer>
-        <ion-button expand="block" color="primary" [disabled]="!postForm.valid" (click)="updatePost()">Submit</ion-button>
-    
+        <ion-button expand="block" color="primary" [disabled]="!postForm.valid" (click)="updatePost()">Submit</ion-button> 
   </ion-footer>

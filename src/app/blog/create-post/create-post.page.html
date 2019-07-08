@@ -16,19 +16,14 @@
       <ion-item>
           <ion-label position="floating">Blog Content</ion-label>
           <ion-textarea rows="6" formControlName="post_body"></ion-textarea>
-        </ion-item>
-      
-      
+      </ion-item>
     </form>
-   
   </ion-content>
 
   <ion-footer>
-    <!-- for dummy -->
-      <ion-button expand="block" href="/posts"  >Submit</ion-button>
-      <!-- for backend -->
-      <!-- <ion-button expand="block" [disabled]="!postForm.valid" (click)="savePost()">Submit</ion-button> -->
-    </ion-footer>
+      <ion-button expand="block" [disabled]="!postForm.valid" (click)="savePost()">Submit</ion-button>
+  </ion-footer>
+  <!-- dont know how to include these -->
       <!-- <ion-input type="hidden">{{user}}</ion-input>
       <ion-input type="hidden">{{user_id}}</ion-input> -->
  
