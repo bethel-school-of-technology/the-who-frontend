@@ -21,7 +21,7 @@ const EVENTS: Event [] = [
   time: '8 am- 5 pm',
   location: 'Main Campus Sanctuary',
 // tslint:disable-next-line: max-line-length
-  details: '>Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+  details: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
 
   // C/O https://placeholder.com/text/lorem-ipsum/'
 },
@@ -33,7 +33,7 @@ const EVENTS: Event [] = [
   time: '12- 5 pm',
   location: 'Lakeview Park',
 // tslint:disable-next-line: max-line-length
-  details: '>Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+  details: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
 
 },
 {
@@ -44,7 +44,7 @@ image: 'http://lorempixel.com/400/65/animals',
   time: '5-10 pm',
   location: 'Zoo',
 // tslint:disable-next-line: max-line-length
-  details: '>Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+  details: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
 }
 ];
 @Component({
