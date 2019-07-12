@@ -1,15 +1,18 @@
 ion-card {
     position: relative;
     width: 100%;
+    background-color:#ffff;
 }
 
-
+ion-card-content {
+    background-color:#ffff;
+}
 
 ion-content {
     --ion-background-color:#dfe8ec;
 }
 
-ion-card {
+#commentBody {
     --ion-background-color:#ffff;
 }
 .pageLogo {
