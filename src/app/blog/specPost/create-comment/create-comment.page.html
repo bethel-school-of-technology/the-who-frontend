@@ -9,12 +9,14 @@
 
 <!--  -->
 <ion-content padding>
+  
     <form formGroup="postForm">
       <ion-item> 
         <!-- this is the post at the top of the page -->
           
           <ion-input rows="10" formControlName="post_body"></ion-input>
       </ion-item>
+    
       <ion-item-divider>
         <ion-label>
           <ion-button expands="block" color="primary" (click)="addBlankComment()">Add Comment</ion-button>
@@ -31,5 +33,5 @@
    </form>
   </ion-content>
   <ion-footer>
-        <ion-button expand="block" color="primary" [disabled]="!postForm.valid" (click)="updatePost()">Submit</ion-button> 
+        <ion-button color="secondary" expand="block"  [disabled]="!postForm.valid" (click)="updatePost()"><ion-ripple-effect></ion-ripple-effect>Submit</ion-button> 
   </ion-footer>
