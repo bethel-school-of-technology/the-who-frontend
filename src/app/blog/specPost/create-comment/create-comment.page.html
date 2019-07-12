@@ -17,22 +17,23 @@
           
           <ion-input rows="10" formControlName="post_body"></ion-input>
       </ion-item>
-    
+    <!-- a list of the comments -->
       <ion-item-divider>
         <ion-label>
           <ion-button expands="block" color="primary" (click)="addBlankComment()">Add Comment</ion-button>
         </ion-label>
       </ion-item-divider>
-      <ion-card>
+      <ion-card id="newCmt">
       <div formArrayName="comments">
         <ion-item *ngFor="let comment of commentData.controls; let i=index" [formGroupName]="i">
           <ion-label position="floating">Comment</ion-label>
-          <ion-textarea rows="6" formControlName="comment"></ion-textarea>
+          <ion-textarea id="newCmt" rows="6" formControlName="comment"></ion-textarea>
         </ion-item>
       </div>
     </ion-card>
    </form>
   </ion-content>
   <ion-footer>
-        <ion-button color="secondary" expand="block"  [disabled]="!postForm.valid" (click)="updatePost()"><ion-ripple-effect></ion-ripple-effect>Submit</ion-button> 
+        <ion-button color="secondary" expand="block"   href="/{post_id}/comments"><ion-ripple-effect></ion-ripple-effect>Submit</ion-button> 
+        <!-- <ion-button color="secondary" expand="block"  [disabled]="!postForm.valid" (click)="updatePost()"><ion-ripple-effect></ion-ripple-effect>Submit</ion-button>  -->
   </ion-footer>

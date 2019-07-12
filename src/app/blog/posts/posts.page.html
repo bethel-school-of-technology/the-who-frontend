@@ -9,9 +9,9 @@
 </ion-header>
 
 <ion-content >
-  <ion-list  class="posts">
+  <ion-list  >
     <ion-item *ngFor="let post of posts">
-    <ion-card >
+    <ion-card>
       <ion-card-header>
           <ion-card-title> {{post.title}}</ion-card-title>
           <ion-card-subtitle>{{post.userName}}, {{post.createDate}}</ion-card-subtitle>
@@ -22,7 +22,8 @@
       
       <ion-footer class="cardfooter">
         <ion-row>
-            <ion-button  class="write" expand="block" (click)="showComments(post.id)"  >Comments</ion-button>
+            <ion-button  class="write" expand="block" href="/{post_id}/comments"  >Comments</ion-button>
+            <!-- <ion-button  class="write" expand="block" (click)="showComments(post.id)"  >Comments</ion-button> -->
         </ion-row> 
         </ion-footer>
       </ion-card>
