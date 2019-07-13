@@ -1,7 +1,19 @@
-.pageLogo {
-    padding: 0px 15px;
+
+on-content {
+    --ion-background-color:#dfe8ec;
 }
 
-ion-content {
-    --ion-background-color:#dfe8ec;
+ion-card {
+    position: relative;
+    width: 100%;
+    background-color: #ffff;
+}
+
+   
+
+.write {
+    --ion-color-primary-shade: #304550;
+}
+.pageLogo {
+    padding: 0px 15px;
 }
