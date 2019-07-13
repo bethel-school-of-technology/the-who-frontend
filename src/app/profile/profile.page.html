@@ -4,17 +4,29 @@
     <ion-buttons slot="start">
       <ion-menu-button  autoHide="false"></ion-menu-button>
     </ion-buttons>
-    <img  class="pageLogo" height="44" slot="end" src="../../assets/images/community life.png">
+    <img  class="pageLogo" routerLink="/home" height="44" slot="end" src="../../assets/images/community life.png">
   </ion-toolbar>
 </ion-header>
 
-<p>First and Last userName</p>
-
- <p>User Name</p>
-
-<p>My Blog Posts:</p>
 <ion-content >
-  <ion-list  >
+  <ion-card >
+    <ion-list class="profile">
+      <ion-item>
+        <ion-label>First and Last Name</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>User Name</ion-label>
+      </ion-item>
+      <ion-item>
+       <ion-label>Email</ion-label>
+      </ion-item>
+     </ion-list>
+    </ion-card>
+  <ion-item>
+     <h3>My Blog Posts:</h3>
+  </ion-item>
+
+  <ion-list>
     <ion-item *ngFor="let post of posts">
     <ion-card>
       <ion-card-header>
@@ -27,7 +39,7 @@
       
       <ion-footer class="cardfooter">
         <ion-row>
-            <ion-button  class="write" expand="block" href="/{post_id}/comments"  >Comments</ion-button>
+            <ion-button  class="write" expand="block"   >Edit</ion-button>
             <!-- <ion-button  class="write" expand="block" (click)="showComments(post.id)"  >Comments</ion-button> -->
         </ion-row> 
         </ion-footer>

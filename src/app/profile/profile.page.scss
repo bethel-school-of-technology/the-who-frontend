@@ -1,16 +1,18 @@
 
-on-content {
+ion-content {
     --ion-background-color:#dfe8ec;
 }
 
 ion-card {
     position: relative;
-    width: 100%;
+    width: 93%;
     background-color: #ffff;
 }
 
    
-
+.profile {
+    --ion-background-color: #ffff;
+}
 .write {
     --ion-color-primary-shade: #304550;
 }

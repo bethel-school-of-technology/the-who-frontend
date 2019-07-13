@@ -6,7 +6,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = 'http://localhost:1337/api/posts';
+const apiUrl = 'http://localhost:3000/api/posts';
 
 @Injectable({
   providedIn: 'root'
@@ -71,3 +71,6 @@ export class RestApiService {
     );
   }
 }
+ // POST: api/posts/{post_id}/comments -> create a comment for a post.
+  // PUT: api/posts/{post_id}/comments/{comment_id} -> update a comment.
+  // DELETE: api/posts/{post_id}/comments/{comment_id}

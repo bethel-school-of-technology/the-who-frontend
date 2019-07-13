@@ -1,5 +1,5 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { RestApiService } from '../../rest-api.service';
+import { RestApiService } from '../../services/posts.service';
 import { LoadingController} from '@ionic/angular';
 import { Component, OnInit, Output } from '@angular/core';
 import {FormControl,

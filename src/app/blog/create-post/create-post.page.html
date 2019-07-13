@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-menu-button  autoHide="false"></ion-menu-button>
     </ion-buttons>
-    <img  class="pageLogo" height="44" slot="end" src="../../assets/images/community life.png">
+      <img  class="pageLogo" routerLink="/home" height="44" slot="end" src="../../assets/images/community life.png">
   </ion-toolbar>
 </ion-header>
 
@@ -19,17 +19,17 @@
           <ion-label position="floating">Blog Content</ion-label>
           <ion-textarea rows="6" formControlName="post_body"></ion-textarea>
       </ion-item>
+      <ion-input type="hidden">{{users.userName}}</ion-input>
+      <ion-input type="hidden">{{users.id}}</ion-input>
     </form>
   </ion-card>
   </ion-content>
 
   <ion-footer>
-      <ion-button color="secondary" expand="block" href="/posts"><ion-ripple-effect></ion-ripple-effect>Submit</ion-button>
-      <!-- <ion-button color="secondary" expand="block" [disabled]="!postForm.valid" (click)="savePost()"><ion-ripple-effect></ion-ripple-effect>Submit</ion-button> -->
+      <ion-button color="secondary" expand="block" [disabled]="!postForm.valid" (click)="savePost()"><ion-ripple-effect></ion-ripple-effect>Submit</ion-button>
   </ion-footer>
-  <!-- dont know how to include these -->
-      <!-- <ion-input type="hidden">{{user}}</ion-input>
-      <ion-input type="hidden">{{user_id}}</ion-input> -->
+
+      
  
 
   
