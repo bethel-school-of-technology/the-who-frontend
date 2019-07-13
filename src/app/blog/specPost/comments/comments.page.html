@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-menu-button  autoHide="false"></ion-menu-button>
     </ion-buttons>
-    <img  class="pageLogo" height="44" slot="end" src="../../assets/images/community life.png">
+    <img  class="pageLogo" routerLink="/home" height="44" slot="end" src="../../assets/images/community life.png">
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +13,7 @@
 <!-- for use with the backend? -->
 <!-- somehow get the post by id -->
 <ion-content>
-    <ion-card padding>
+    <ion-card class="post">
       <ion-card-header>
         <ion-card-title> {{ post.title }}</ion-card-title>
         <ion-card-subtitle>{{ post.userName }}, {{ post.createDate }}</ion-card-subtitle>
@@ -24,8 +24,7 @@
     </ion-card>
   
   <ion-item>
-    <ion-button color="secondary" expand="block" href="{post_id}/comments/create-comment" ><ion-ripple-effect></ion-ripple-effect>Add Comment</ion-button>
-    <!-- <ion-button color="secondary" expand="block" (click)="edit(post.id)"><ion-ripple-effect></ion-ripple-effect>Add Comment</ion-button> -->
+    <ion-button color="secondary" expand="block" (click)="edit(post.id)"><ion-ripple-effect></ion-ripple-effect>Add Comment</ion-button>
     <ion-button slot="end" color="secondary" expand="block" href="posts" ><ion-ripple-effect></ion-ripple-effect>Back to Blog</ion-button>
   </ion-item>
   <!-- </ion-item> -->
@@ -35,7 +34,7 @@
   </ion-item>
 
   <ion-list class="comments">
-    <ion-item *ngFor="let comment of comments">
+    <ion-item *ngFor="let comment of post.comments">
       <ion-card>
         <ion-card-content>
           <ion-item id="commentBody">{{ comment.body }}</ion-item>

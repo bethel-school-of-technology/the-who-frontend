@@ -72,4 +72,18 @@ export class RestApiService {
       catchError(this.handleError)
     );
   }
+
+  getPostById(id: string): Observable<any> {
+    const url = `${apiUrl}/${id}`;
+    return this.http.get(url, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError)
+    );
+  }
+  updatePost(id: string, data): Observable<any> {
+    const url = `${apiUrl}/${id}`;
+    return this.http.put(url, data, httpOptions).pipe(
+      catchError(this.handleError)
+    );
+  }
 }
