@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
-import { RestApiService } from 'src/app/services/posts.service';
+import { CommentsService } from 'src/app/services/comments.service';
 
 
 
@@ -21,7 +21,7 @@ export class CommentsPage implements OnInit {
   constructor(
     public route: ActivatedRoute,
     public loadingController: LoadingController,
-    public api: RestApiService,
+    public api: CommentsService,
     public router: Router) { }
 
 
