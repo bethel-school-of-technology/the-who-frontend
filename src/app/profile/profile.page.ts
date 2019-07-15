@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-
+export class User {
+  userId: number;
+  userName: string;
+  email: string;
+  posts: string;
+}
 
 @Component({
   selector: 'app-profile',

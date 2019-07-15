@@ -1,5 +1,5 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { RestApiService } from '../../services/posts.service';
+import { PostsService } from '../../services/posts.service';
 import { LoadingController} from '@ionic/angular';
 import { Component, OnInit, Output } from '@angular/core';
 import {FormControl,
@@ -17,6 +17,13 @@ import { ValueAccessor } from '@ionic/angular/dist/directives/control-value-acce
 
 
 
+export class User {
+  userId: number;
+  userName: string;
+  email: string;
+  posts: string;
+}
+
 @Component({
   selector: 'app-create-post',
   templateUrl: './create-post.page.html',
@@ -26,7 +33,7 @@ export class CreatePostPage implements OnInit {
   postForm: FormGroup;
   comments: FormArray;
 
-  constructor(public api: RestApiService,
+  constructor(public api: PostsService,
               public loadingController: LoadingController,
               public route: ActivatedRoute,
               public router: Router,

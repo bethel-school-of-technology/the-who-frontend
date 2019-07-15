@@ -6,12 +6,12 @@ import { catchError, tap, map } from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = 'http://localhost:1337/api/posts';
+const apiUrl = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RestApiService {
+export class CommentsService {
 
   constructor(private http: HttpClient) { }
 
@@ -83,6 +83,12 @@ export class RestApiService {
   updatePost(id: string, data): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.put(url, data, httpOptions).pipe(
+      catchError(this.handleError)
+    );
+  }
+  deletePost(id: string): Observable<{}> {
+    const url = `${apiUrl}/${id}`;
+    return this.http.delete(url, httpOptions).pipe(
       catchError(this.handleError)
     );
   }

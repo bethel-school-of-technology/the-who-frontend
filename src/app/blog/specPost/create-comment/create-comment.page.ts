@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RestApiService} from 'src/app/services/comments.service';
+import { CommentsService} from 'src/app/services/comments.service';
 import { NavController, LoadingController } from '@ionic/angular';
 import {
   FormsModule,
@@ -25,7 +25,7 @@ export class CreateCommentPage implements OnInit {
 
   constructor(
     public navCtrl: NavController,
-    public api: RestApiService,
+    public api: CommentsService,
     public loadingController: LoadingController,
     private route: ActivatedRoute,
     public router: Router,
