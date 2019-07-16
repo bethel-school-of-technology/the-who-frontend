@@ -1,8 +1,11 @@
+import { environment } from './../../environments/environment.prod';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Post } from '../post.model';
+
+
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -35,6 +38,7 @@ export class PostsService {
     const body = res;
     return body || { };
   }
+
 
   getPost(): Observable<any> {
     return this.http.get(apiUrl, httpOptions).pipe(
