@@ -1,18 +1,11 @@
+import { Post } from 'src/app/post.model';
 import { NavController, LoadingController } from '@ionic/angular';
 import { PostsService } from '../../services/posts.service';
 import { Router } from '@angular/router';
-import { Post } from 'src/app/post.model';
+
 
 import { Component, OnInit } from '@angular/core';
 
-// export class Post {
-//   postId: number;
-//   userId: number;
-//   userName: string;
-//   title: string;
-//   body: string;
-//   createDate: string;
-// }
 
 
 @Component({
@@ -22,8 +15,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsPage implements OnInit {
 
-
   posts: any;
+
   constructor(public navCtrl: NavController,
               public api: PostsService,
               public loadingController: LoadingController,
@@ -36,6 +29,7 @@ export class PostsPage implements OnInit {
   ngOnInit() {
     console.log('posts page');
     this.getPosts();
+
     }
 
     async getPosts() {

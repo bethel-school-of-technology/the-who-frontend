@@ -14,15 +14,18 @@ import {FormControl,
 
 import { EventEmitter } from 'protractor';
 import { ValueAccessor } from '@ionic/angular/dist/directives/control-value-accessors/value-accessor';
+// import { User } from 'src/app/user.model';
+// import { Post } from 'src/app/post.model';
 
 
+// export class User {
+//   id: number;
+//   name: string;
+//   email: string;
+//   posts: string;
+// }
 
-export class User {
-  userId: number;
-  userName: string;
-  email: string;
-  posts: string;
-}
+
 
 @Component({
   selector: 'app-create-post',
@@ -39,13 +42,13 @@ export class CreatePostPage implements OnInit {
               public router: Router,
               private formbuilder: FormBuilder) {
                 this.postForm = this.formbuilder.group({
-                  post_title : [null, Validators.required],
-                  user: [null, Validators.required],
-                  post_id: [null, Validators.required],
-                  post_body : [null, Validators.required],
+                  postTitle : '',
+                  userId: '',
+                  postId: '',
+                  postBody : '',
                 });
               }
-
+// [ null, Validators.required]
 
 
   ngOnInit() {
