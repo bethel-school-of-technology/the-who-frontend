@@ -44,6 +44,7 @@ export class CreatePostPage implements OnInit {
                 this.postForm = this.formbuilder.group({
                   postTitle : '',
                   userId: '',
+                  userName: '',
                   postId: '',
                   postBody : '',
                 });
