@@ -30,7 +30,7 @@ const COMMENTS: Comment [] = [
       commentId: 2,
       userId: 27,
       userName: 'Tony',
-      body: 'Iron Man is definitely a better man', 
+      body: 'Iron Man is definitely a better man',
       createDate: 'July 20, 2019'
 
     },
