@@ -22,7 +22,7 @@
     </ion-card>
   
   <ion-item>
-    <ion-button color="secondary" expand="block" (click)="edit(post.id)"><ion-ripple-effect></ion-ripple-effect>Add Comment</ion-button>
+    <ion-button color="secondary" expand="block" href="{post_id}/comments/create-comment"><ion-ripple-effect></ion-ripple-effect>Add Comment</ion-button>
     <ion-button slot="end" color="secondary" expand="block" href="posts" ><ion-ripple-effect></ion-ripple-effect>Back to Blog</ion-button>
   </ion-item>
   
@@ -32,7 +32,7 @@
   </ion-item>
 
   <ion-list class="comments">
-    <ion-item *ngFor="let comment of post.comments">
+    <ion-item *ngFor="let comment of comments">
       <ion-card>
         <ion-card-content>
           <ion-item id="commentBody">{{ comment.body }}</ion-item>
